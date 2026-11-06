@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CramLingo — Get your Spanish ready for the date you can't move</title>
+  <meta name="description" content="A day-by-day cram plan for one event — your trip, interview, or family visit — built for your level and your deadline.">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CramLingo — Get your Spanish ready for the date you can't move">
+  <meta property="og:description" content="A day-by-day cram plan for one event — your trip, interview, or family visit — built for your level and your deadline.">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="CramLingo — Get your Spanish ready for the date you can't move">
+  <meta property="twitter:description" content="A day-by-day cram plan for one event — your trip, interview, or family visit — built for your level and your deadline.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #FDFBF6;
+      --surface: #F4EFE4;
+      --border: #E2DAC9;
+      --text-primary: #241F18;
+      --text-muted: #6C6456;
+      --accent: #D23B2E;
+      --accent-hover: #B02C21;
+      --text-on-accent: #FFFFFF;
+      
+      --font-heading: 'Archivo', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      
+      --radius: 8px;
+      --max-width: 1080px;
+      --section-padding: 96px;
+    }
+
+    /* Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 17px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      color: var(--text-primary);
+      text-wrap: balance;
+    }
+
+    h1 {
+      font-size: 44px;
+      font-weight: 700;
+      line-height: 1.15;
+    }
+
+    h2 {
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+
+    h3 {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    p {
+      text-wrap: pretty;
+      max-width: 65ch;
+    }
+
+    .small {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* Layout Components */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: var(--section-padding) 0;
+    }
+
+    section.bg-surface {
+      background-color: var(--surface);
+    }
+
+    section.bg-default {
+      background-color: var(--bg);
+    }
+
+    /* Navigation */
+    nav {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      background-color: var(--bg);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 22px;
+      color: var(--text-primary);
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-primary);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 15px;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.7;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 16px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.1s;
+      border: none;
+    }
+
+    .btn:active {
+      transform: scale(0.97);
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: var(--text-on-accent);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-hover);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      border: 1px solid var(--text-primary);
+      color: var(--text-primary);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--surface);
+    }
+
+    .btn-full {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      margin-bottom: 16px;
+    }
+
+    .hero-subhead {
+      font-size: 19px;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+
+    .credibility {
+      margin-top: 24px;
+      color: var(--text-muted);
+      font-size: 14px;
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+    }
+
+    .hero-visual {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+    }
+
+    .calendar-mock {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .calendar-header {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 14px;
+    }
+
+    .calendar-days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px;
+      font-size: 14px;
+    }
+
+    .calendar-day {
+      padding: 8px 0;
+      border-radius: 4px;
+    }
+
+    .calendar-day.circled {
+      border: 2px solid var(--accent);
+      color: var(--accent);
+      font-weight: 700;
+      position: relative;
+    }
+
+    .desk-elements {
+      display: flex;
+      gap: 16px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .desk-card {
+      flex: 1;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px;
+    }
+
+    /* Problem Section */
+    .problem-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .problem-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 16px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .problem-icon {
+      width: 24px;
+      height: 24px;
+      stroke: var(--accent);
+      stroke-width: 2;
+      fill: none;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .problem-conclusion {
+      margin-top: 32px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    /* How It Works */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+
+    .step-num {
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    /* Demo Moment */
+    .demo-intro {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 32px;
+      color: var(--text-muted);
+    }
+
+    .demo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 32px;
+    }
+
+    .demo-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+    }
+
+    .demo-card-title {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+    }
+
+    .input-field-mock {
+      margin-bottom: 16px;
+    }
+
+    .input-field-mock label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .input-field-mock .val {
+      font-weight: 500;
+      padding: 8px 12px;
+      background: var(--surface);
+      border-radius: 4px;
+      border: 1px solid var(--border);
+    }
+
+    .plan-header-tag {
+      color: var(--accent);
+      font-weight: 700;
+      font-family: var(--font-heading);
+      margin-bottom: 16px;
+    }
+
+    .plan-section {
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .plan-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .plan-section-title {
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .dialogue-box {
+      background: var(--surface);
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 15px;
+      margin: 8px 0;
+      border-left: 3px solid var(--accent);
+    }
+
+    .recovery-list {
+      list-style: none;
+      margin-top: 8px;
+    }
+
+    .recovery-list li {
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .accent-tag {
+      background: var(--accent);
+      color: white;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    /* Benefits Grid */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .benefit-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .benefit-icon {
+      width: 32px;
+      height: 32px;
+      stroke: var(--text-primary);
+      stroke-width: 2;
+      fill: none;
+      margin-bottom: 16px;
+    }
+
+    /* Pricing */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .pricing-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .pricing-card.recommended {
+      border: 2px solid var(--accent);
+    }
+
+    .badge-recommended {
+      position: absolute;
+      top: -12px;
+      right: 24px;
+      background: var(--accent);
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 12px;
+    }
+
+    .price-amount {
+      font-family: var(--font-heading);
+      font-size: 36px;
+      font-weight: 700;
+      margin: 16px 0 8px 0;
+    }
+
+    .pricing-features {
+      list-style: none;
+      margin: 24px 0;
+      flex-grow: 1;
+    }
+
+    .pricing-features li {
+      margin-bottom: 12px;
+      font-size: 15px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    /* FAQ */
+    .faq-list {
+      max-width: 800px;
+      margin: 48px auto 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 24px 0;
+    }
+
+    .faq-question {
+      font-family: var(--font-heading);
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    /* Modal / Form */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(36, 31, 24, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      max-width: 480px;
+      width: 90%;
+      position: relative;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: var(--text-muted);
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 16px;
+      background: var(--bg);
+    }
+
+    .form-input:focus {
+      outline: 2px solid var(--accent);
+    }
+
+    /* Honeypot */
+    .hp-field {
+      display: none !important;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-grid, .steps-grid, .demo-grid, .benefits-grid, .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 { font-size: 34px; }
+      h2 { font-size: 26px; }
+
+      .nav-links { display: none; }
+      
+      section {
+        padding: 48px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <div class="container">
+    <nav>
+      <a href="#" class="logo">
+        <svg class="logo-icon" viewBox="0 0 32 32">
+          <rect x="4" y="6" width="24" height="22" rx="3" fill="none" stroke="#241F18" stroke-width="2"/>
+          <line x1="4" y1="12" x2="28" y2="12" stroke="#241F18" stroke-width="2"/>
+          <circle cx="16" cy="20" r="5" fill="none" stroke="#D23B2E" stroke-width="2"/>
+          <path d="M22 4 V8 M10 4 V8" stroke="#241F18" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        CramLingo
+      </a>
+      <ul class="nav-links">
+        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <button class="btn btn-primary open-modal-btn" data-source="nav">Get my free cram plan</button>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <section class="bg-default">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <h1>Get your Spanish ready for the date you can't move</h1>
+          <p class="hero-subhead">A day-by-day cram plan for one event — your trip, interview, or family visit — built for your level and your deadline.</p>
+          <button class="btn btn-primary btn-full open-modal-btn" data-source="hero" style="max-width: 320px;">Get my free cram plan</button>
+          <p class="credibility">A private tutor runs $18–$32 an hour — and you still have to figure out what to practice. Group class sprints cost $310 and up and teach a curriculum, not your date.</p>
+        </div>
+        <div class="hero-visual">
+          <div class="calendar-mock">
+            <div class="calendar-header">OCTOBER</div>
+            <div class="calendar-days">
+              <div class="calendar-day">M</div><div class="calendar-day">T</div><div class="calendar-day">W</div><div class="calendar-day">T</div><div class="calendar-day">F</div><div class="calendar-day">S</div><div class="calendar-day">S</div>
+              <div class="calendar-day">1</div><div class="calendar-day">2</div><div class="calendar-day">3</div><div class="calendar-day">4</div><div class="calendar-day">5</div><div class="calendar-day">6</div><div class="calendar-day">7</div>
+              <div class="calendar-day">8</div><div class="calendar-day">9</div><div class="calendar-day">10</div><div class="calendar-day">11</div><div class="calendar-day">12</div><div class="calendar-day">13</div><div class="calendar-day">14</div>
+              <div class="calendar-day">15</div><div class="calendar-day">16</div><div class="calendar-day">17</div><div class="calendar-day">18</div><div class="calendar-day">19</div><div class="calendar-day">20</div>
+              <div class="calendar-day circled">21</div>
+            </div>
+          </div>
+          <div class="desk-elements">
+            <div class="desk-card">
+              <strong>Passport:</strong> Spain / Mexico
+            </div>
+            <div class="desk-card">
+              <strong>Notes:</strong> "Mucho gusto, he oído..."
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section class="bg-surface">
+    <div class="container">
+      <h2>The date is set. Your Spanish isn't.</h2>
+      <div class="problem-list">
+        <div class="problem-item">
+          <svg class="problem-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <div>"I'm going to Spain in three months with basically no Spanish." The calendar doesn't care about your streak.</div>
+        </div>
+        <div class="problem-item">
+          <svg class="problem-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <div>You understand most of what you hear — then someone asks a follow-up and your mind goes blank.</div>
+        </div>
+        <div class="problem-item">
+          <svg class="problem-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <div>Duolingo teaches a language. A 10-week evening class teaches a curriculum. Nobody preps the one conversation you're actually afraid of.</div>
+        </div>
+        <div class="problem-item">
+          <svg class="problem-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <div>A tutor can help, but you have to find one, schedule them, and tell them what to practice. You don't know what to practice. That's the problem.</div>
+        </div>
+      </div>
+      <p class="problem-conclusion">Every day you spend on generic lessons is a day not spent rehearsing the dinner, the interview, the appointment that's actually coming.</p>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="bg-default" id="how-it-works">
+    <div class="container">
+      <h2>One event. One date. One plan.</h2>
+      <div class="steps-grid">
+        <div>
+          <div class="step-num">Step 1</div>
+          <h3>Tell it your situation</h3>
+          <p>Enter your event, your language, your honest level, and the date. In minutes you get a day-by-day plan built backward from that date.</p>
+        </div>
+        <div>
+          <div class="step-num">Step 2</div>
+          <h3>Rehearse the real thing</h3>
+          <p>Practice unscripted roleplays every day — with follow-up questions you didn't see coming — and drill the recovery phrases that save you when you blank.</p>
+        </div>
+        <div>
+          <div class="step-num">Step 3</div>
+          <h3>Pass the final simulation</h3>
+          <p>Two days before your event, the app throws an unfamiliar version of it at you and grades your readiness. You walk in knowing you've already survived the hard version.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo Moment -->
+  <section class="bg-surface">
+    <div class="container">
+      <p class="demo-intro">Here's a real plan the app builds for a real situation — one that shows up in language forums every single week.</p>
+      <div class="demo-grid">
+        <div class="demo-card">
+          <div class="demo-card-title">You tell it this</div>
+          <div class="input-field-mock">
+            <label>Event</label>
+            <div class="val">Meeting my boyfriend's family in Mexico</div>
+          </div>
+          <div class="input-field-mock">
+            <label>Language</label>
+            <div class="val">Spanish</div>
+          </div>
+          <div class="input-field-mock">
+            <label>My level</label>
+            <div class="val">I understand more than I can speak</div>
+          </div>
+          <div class="input-field-mock">
+            <label>Date</label>
+            <div class="val">21 days away</div>
+          </div>
+        </div>
+
+        <div class="demo-card">
+          <div class="demo-card-title">It builds this</div>
+          <div class="plan-header-tag">YOUR 21-DAY CRAM PLAN — Family visit, Spanish</div>
+          
+          <div class="plan-section">
+            <div class="plan-section-title">Days 1–3: Family & introductions</div>
+            <p class="small">Drill: suegra, cuñado, "Mucho gusto, he oído mucho de ustedes." Listening: fast family-dinner Spanish.</p>
+          </div>
+
+          <div class="plan-section">
+            <div class="plan-section-title">Days 4–7: Talking about yourself</div>
+            <p class="small">Work, your city, how you two met. Roleplay: Mamá asks how you met. Expect follow-ups.</p>
+          </div>
+
+          <div class="plan-section">
+            <div class="plan-section-title">Day 8 roleplay preview:</div>
+            <div class="dialogue-box">
+              <strong>Tía:</strong> "¿Y ustedes cuándo se van a casar?" <br>
+              <span class="small" style="color: var(--text-muted);">(So when are you two getting married?)</span>
+            </div>
+            <p class="small">— the question you didn't rehearse. You practice answering it anyway.</p>
+          </div>
+
+          <div class="plan-section">
+            <div class="plan-section-title">Your recovery phrases (drilled daily):</div>
+            <ul class="recovery-list">
+              <li>"Perdón, ¿lo puedes repetir más despacio?" — <span class="small">Sorry, can you repeat that more slowly?</span></li>
+              <li>"Entiendo casi todo, pero hablo despacio." — <span class="small">I understand almost everything, but I speak slowly.</span></li>
+              <li>"¿Cómo se dice…?" — <span class="small">How do you say…?</span></li>
+            </ul>
+          </div>
+
+          <div class="plan-section">
+            <div class="plan-section-title"><span class="accent-tag">Day 20</span> Final simulation</div>
+            <p class="small">Dinner goes off-script — a cousin nobody mentioned, a question about politics, a toast you're asked to give. You get a readiness grade before the real thing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="bg-default">
+    <div class="container">
+      <h2>Built for the conversation that matters</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <svg class="benefit-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <h3>Built backward from your date</h3>
+          <p class="small">Every day of the plan exists because your deadline demands it. No filler lessons.</p>
+        </div>
+        <div class="benefit-card">
+          <svg class="benefit-icon" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          <h3>Only the words you'll use</h3>
+          <p class="small">Family-dinner vocabulary for a family dinner. Interview answers for an interview. Nothing else.</p>
+        </div>
+        <div class="benefit-card">
+          <svg class="benefit-icon" viewBox="0 0 24 24"><path d="M16 3h5v5"/><path d="M4 20L21 3"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg>
+          <h3>Practice the unexpected</h3>
+          <p class="small">Roleplays go off-script on purpose, so the real conversation can't surprise you.</p>
+        </div>
+        <div class="benefit-card">
+          <svg class="benefit-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="4.93" y1="4.93" x2="9.17" y2="9.17"/><line x1="14.83" y1="14.83" x2="19.07" y2="19.07"/><line x1="14.83" y1="9.17" x2="19.07" y2="4.93"/><line x1="4.93" y1="19.07" x2="9.17" y2="14.83"/></svg>
+          <h3>Recover when you blank</h3>
+          <p class="small">Drilled phrases that buy you time, slow the other person down, and keep you in the conversation.</p>
+        </div>
+        <div class="benefit-card">
+          <svg class="benefit-icon" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <h3>Rehearse in private</h3>
+          <p class="small">No classmates, no judgment, no embarrassment. Mess up as many times as you need.</p>
+        </div>
+        <div class="benefit-card">
+          <svg class="benefit-icon" viewBox="0 0 24 24"><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
+          <h3>Know you're ready</h3>
+          <p class="small">A final graded simulation tells you where you stand before the real day does.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="bg-surface" id="pricing">
+    <div class="container">
+      <h2>Cheaper than one hour with a tutor you'd still have to brief</h2>
+      <div class="pricing-grid">
+        
+        <div class="pricing-card">
+          <h3>Event Pack</h3>
+          <div class="price-amount">$49 <span class="small" style="font-weight:400;">one-time</span></div>
+          <p class="small"><strong>Best for:</strong> one trip, interview, or family visit.</p>
+          <ul class="pricing-features">
+            <li>✓ Day-by-day cram plan to your date</li>
+            <li>✓ Situation-specific vocabulary + recovery phrases</li>
+            <li>✓ Unlimited roleplay practice until your event</li>
+            <li>✓ Final unfamiliar simulation with readiness grade</li>
+          </ul>
+          <button class="btn btn-secondary btn-full open-modal-btn" data-tier="Event Pack">Reserve my Event Pack</button>
+        </div>
+
+        <div class="pricing-card recommended">
+          <div class="badge-recommended">Recommended</div>
+          <h3>Event Pack + Tutor Mock</h3>
+          <div class="price-amount">$79 <span class="small" style="font-weight:400;">one-time</span></div>
+          <p class="small"><strong>Best for:</strong> interviews and high-stakes conversations where you want a human check.</p>
+          <ul class="pricing-features">
+            <li>✓ Everything in the Event Pack</li>
+            <li>✓ 30-minute live mock with a human tutor</li>
+            <li>✓ Written feedback on clarity and weak spots</li>
+            <li>✓ Tutor session scheduled within 48 hours of your event</li>
+          </ul>
+          <button class="btn btn-primary btn-full open-modal-btn" data-tier="Event Pack + Tutor Mock">Reserve my pack + mock</button>
+        </div>
+
+        <div class="pricing-card">
+          <h3>Relocation Pack</h3>
+          <div class="price-amount">$149 <span class="small" style="font-weight:400;">one-time</span></div>
+          <p class="small"><strong>Best for:</strong> moving abroad and facing many first conversations.</p>
+          <ul class="pricing-features">
+            <li>✓ Cram plans for 5 everyday situations (landlord, bank, doctor, and more)</li>
+            <li>✓ Unlimited roleplays across all 5 situations</li>
+            <li>✓ Two tutor mock sessions</li>
+            <li>✓ 90 days of practice access</li>
+          </ul>
+          <button class="btn btn-secondary btn-full open-modal-btn" data-tier="Relocation Pack">Reserve my Relocation Pack</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-default" id="faq">
+    <div class="container">
+      <h2>Fair questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">Is this available yet?</div>
+          <p>Not yet — this page is for founding early access. Spanish launches first. Sign up and you'll get your first cram plan free when we open the doors, before any public launch.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Why not just use ChatGPT or Duolingo for free?</div>
+          <p>You can ask an AI to roleplay — but you have to design the plan, the drills, the recovery phrases, and the escalating difficulty yourself, every day, while anxious. CramLingo builds the whole countdown for you. Duolingo teaches a language; it has no idea you have a dinner in 21 days.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Can I really get ready in three weeks?</div>
+          <p>Ready for one conversation — yes. We won't promise fluency, and we won't pretend to. The goal is sounding competent and recovering gracefully in the specific situation you're facing. That's a trainable skill on a deadline.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What if my level is too low?</div>
+          <p>The plan adapts to your honest starting point. If you're a near-beginner, it leans harder on recovery phrases, listening, and short scripted openers — the things that keep a conversation alive at any level.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What languages do you cover?</div>
+          <p>Spanish first, because that's where the loudest need is. French and Portuguese follow. Tell us your language at signup and you'll be first in line when it ships.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What if it doesn't work for me?</div>
+          <p>Founding users pay nothing today — signing up reserves your spot and your free plan. When paid packs launch, they'll carry a simple refund policy: if you do the plan and don't feel readier, you get your money back.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="bg-surface">
+    <div class="container" style="text-align: center;">
+      <h2>Your date is getting closer either way. Walk in prepared.</h2>
+      <p style="margin: 0 auto 32px auto;">Founding users get early access and their first cram plan free — no card, no commitment, just your email.</p>
+      <button class="btn btn-primary open-modal-btn" data-source="final_cta" style="min-width: 280px;">Get my free cram plan</button>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="captureModal">
+    <div class="modal-card">
+      <button class="close-modal" id="closeModal">&times;</button>
+      <div id="formContainer">
+        <h3 style="margin-bottom: 8px;">Reserve your free cram plan</h3>
+        <p class="small" style="color: var(--text-muted); margin-bottom: 20px;">Founding-user early access. Spanish launches first.</p>
+        
+        <form id="leadForm">
+          <!-- Honeypot -->
+          <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off">
+          
+          <div class="form-group">
+            <label for="emailInput">Email Address</label>
+            <input type="email" id="emailInput" class="form-input" placeholder="you@email.com" required>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-full">Get my free cram plan</button>
+          <p class="small" style="color: var(--text-muted); margin-top: 12px; font-size: 12px;">No spam. One email when early access opens, and you can ignore it.</p>
+        </form>
+      </div>
+
+      <div id="successState" style="display: none;">
+        <h3 style="margin-bottom: 12px; color: var(--accent);">You're on the founding list.</h3>
+        <p class="small">When early access opens — Spanish first — you'll get one email with a link to build your free cram plan. If your event is soon, reply to that email and we'll bump you to the front.</p>
+        <button class="btn btn-secondary btn-full" id="doneBtn" style="margin-top: 20px;">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Lead capture & UI interaction logic
+    let currentSource = 'direct';
+    let currentTier = 'none';
+
+    const modal = document.getElementById('captureModal');
+    const closeModal = document.getElementById('closeModal');
+    const leadForm = document.getElementById('leadForm');
+    const formContainer = document.getElementById('formContainer');
+    const successState = document.getElementById('successState');
+    const doneBtn = document.getElementById('doneBtn');
+
+    // Attach click listeners to all open-modal buttons
+    document.querySelectorAll('.open-modal-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        currentSource = btn.getAttribute('data-source') || 'button';
+        currentTier = btn.getAttribute('data-tier') || 'none';
+        modal.classList.add('active');
+      });
+    });
+
+    closeModal.addEventListener('click', () => {
+      modal.classList.remove('active');
+    });
+
+    doneBtn.addEventListener('click', () => {
+      modal.classList.remove('active');
+    });
+
+    // Form Submission
+    leadForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const hp = leadForm.querySelector('input[name="website"]').value;
+      if (hp) {
+        // Honeypot triggered, silently drop
+        return;
+      }
+
+      const email = document.getElementById('emailInput').value;
+
+      // Local mock payload for lead tracking
+      const leadData = {
+        email: email,
+        source: currentSource,
+        tier: currentTier,
+        timestamp: new Date().toISOString()
+      };
+
+      console.log('Lead captured locally/Firestore target:', leadData);
+
+      // Render success state
+      formContainer.style.display = 'none';
+      successState.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
